@@ -7,6 +7,9 @@ Follows (except for font choice) the style guide published by research services 
 It supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
 
 The file sample.tex contains usage instructions.
+## Changes in 2.3
+- added supervisors support
+- added `logo/nologo` option
 
 ## Changes in 2.0
 - Added support of MPhil/MRes
