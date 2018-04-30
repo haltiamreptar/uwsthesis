@@ -1,9 +1,8 @@
 # `uwsthesis.cls` a class for UWS/WSU thesis
 
 This directory contains uwsthesis.cls, a LaTeX style file for the preparation of theses for Western Sydney University degrees.
-Follows (except for font choice) the style guide published by research services. [http://www.uws.edu.au/research/current_research_students/examination/thesis_presentation]
+Follows (except for font choice) the style guide published by research services https://www.westernsydney.edu.au/print_services/print_services/thesis_presentation
 
-http://www.uws.edu.au/research/current_research_students/examination/thesis_presentation
 
 It supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
 
