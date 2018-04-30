@@ -1,0 +1,31 @@
+<p>This directory contains uwsthesis.cls, a LaTeX style file for the preparation of theses for Western Sydney University degrees. Follows (except for font choice) the style guide published by research services. <a href="http://www.uws.edu.au/research/current_research_students/examination/thesis_presentation">http://www.uws.edu.au/research/current_research_students/examination/thesis_presentation</a>
+</p><p>
+Currently at Version 2.0, it supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
+</p><p>
+The file sample.tex contains usage instructions.
+</p>
+<p><b> Changes in 2.0</b><br/>
+Added support of MPhil/MRes and changed Default to Western Sydney University, option UWS will return to University of Western Sydney.
+<p><b> Changes in 1.96</b><br/>
+Added support for \lt and \gt that ADS spits out in bibtex entries.
+</p>
+<p><b> Changes in 1.95</b><br/>
+Added bib/nobib option to suppress unreferenced list.<br/>
+Added extra spacing options nodoublespace/doublespace/realdoublespace that control spacing, nodoublespace along with twoside would be useful for drafts.<br>
+Support for listing citations to publications with \cites macro,which prints the number of citations if greater than zero and nothing if zero. In the publications section do something like:
+<pre>
+\begin{enumerate}
+\item\bibentry{my-paper}\cites{N}
+\item\bibentry{my-other-paper}\cites{M}
+...
+
+\end{enumerate}
+</pre>
+For students where the ADS is appropriate then  this custom ads format: \\item\\bibentry{%R}\\cites{%c} will help.
+<p>
+<b>Changes in 1.9</b><br />
+Fixed macro support for Journal entries from ADS.<br />
+<b>Changes in 1.8</b><br />
+Added rest of SCM Degrees.<br />
+<b>Changes in 1.7</b><br />
+First public release.
