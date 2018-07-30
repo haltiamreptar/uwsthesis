@@ -240,6 +240,9 @@ I hereby declare that I have not submitted this material, either in full or in p
 %% Publications 
 \DeclareRobustCommand{\pubs}[1]{\DeclareRobustCommand{\@pubs}{#1}}
 
+%% Foreword
+\DeclareRobustCommand{\foreword}[1]{\DeclareRobustCommand{\@fore}{#1}}
+
 
 
 %% Acronyms
@@ -278,6 +281,12 @@ I hereby declare that I have not submitted this material, either in full or in p
 \fi
 \origionality
 \cleardoublepage
+\ifdefined\@fore
+\chapter*{Foreword}
+\thispagestyle{empty}
+\@fore
+\cleardoublepage
+\fi
 \pagestyle{plain}
 \setcounter{page}{1}
 \tableofcontents\cleardoublepage
