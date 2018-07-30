@@ -7,6 +7,9 @@ Follows (except for font choice) the style guide published by research services 
 It supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
 
 The file sample.tex contains usage instructions.
+## Changes in 2.5
+- Added a forward option, that adds a Forward section to the frontmatter - Thanks to @kiza931 for implementing this.
+
 ## Changes in 2.3
 - added supervisors support
 - added `logo/nologo` option
