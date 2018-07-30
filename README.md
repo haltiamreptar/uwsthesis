@@ -9,6 +9,7 @@ It supports the computing and maths dgrees of the  School of Computing, Engineer
 The file sample.tex contains usage instructions.
 ## Changes in 2.5
 - Added a forward option, that adds a Forward section to the frontmatter - Thanks to @kiza931 for implementing this.
+- Added travis-ci builds/testing for the REPO, see issue #23
 
 ## Changes in 2.3
 - added supervisors support
