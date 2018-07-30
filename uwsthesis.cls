@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \ProvidesClass{uwsthesis}[2017/07/30
-                                v2.5
+                                v2.5a
                       A class for typesetting UWS/WSU  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
@@ -263,6 +263,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 
 
 \DeclareRobustCommand{\frontstuff}{\frontmatter
+\pagenumbering{Alph}
 \maketitle
 \pagestyle{empty}
 \cleardoublepage
@@ -289,6 +290,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 \fi
 \pagestyle{plain}
 \setcounter{page}{1}
+\pagenumbering{roman}
 \tableofcontents\cleardoublepage
 \@dolistoftables\cleardoublepage
 \@dolistoffigures\cleardoublepage

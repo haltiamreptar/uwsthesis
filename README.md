@@ -1,4 +1,4 @@
-# `uwsthesis.cls` a class for UWS/WSU thesis
+# `uwsthesis.cls` a class for UWS/WSU thesis [![Build Status](https://travis-ci.org/haltiamreptar/uwsthesis.svg?branch=master)](https://travis-ci.org/haltiamreptar/uwsthesis)
 
 This directory contains uwsthesis.cls, a LaTeX style file for the preparation of theses for Western Sydney University degrees.
 Follows (except for font choice) the style guide published by research services https://www.westernsydney.edu.au/print_services/print_services/thesis_presentation
@@ -7,6 +7,8 @@ Follows (except for font choice) the style guide published by research services 
 It supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
 
 The file sample.tex contains usage instructions.
+## Changes in 2.5a
+- In response to CI additions, fixed the label multiply defined error, unnumbered pages now have uppercase Alpha page number (not printed but they do leak into some PDF viewers)
 ## Changes in 2.5
 - Added a forward option, that adds a Forward section to the frontmatter - Thanks to @kiza931 for implementing this.
 - Added travis-ci builds/testing for the REPO, see issue #23

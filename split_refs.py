@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
+import sys
 
-  import sys
 
-
-  if len(sys.argv) != 2:
-	print "Usage: split_ref.py filename"
+if len(sys.argv) != 2:
+	print("Usage: split_ref.py filename")
 	sys.exit()
 
-  refs={}
-  f=open("references.bib")
-  n=f.read()
+refs={}
+f=open("references.bib")
+n=f.read()
 f.close()
 o=n.split('@')
 for p in o:
@@ -29,9 +29,7 @@ f2.close()
 for l in cited:
 	if l.startswith("\citation{"):
 		key=l.split('{')[1].split('}')[0]
-#		print key
 		if key.find(',')>=0:
-			print 'many'
 			for nkey in key.split(','):
 				if nkey in refs:
 					del refs[nkey]
