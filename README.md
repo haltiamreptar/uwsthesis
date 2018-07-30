@@ -7,6 +7,8 @@ Follows (except for font choice) the style guide published by research services 
 It supports the computing and maths dgrees of the  School of Computing, Engineering and Mathematics.
 
 The file sample.tex contains usage instructions.
+## Changes in 2.5b
+- Hopefully fix the unused option [twoside]
 ## Changes in 2.5a
 - In response to CI additions, fixed the label multiply defined error, unnumbered pages now have uppercase Alpha page number (not printed but they do leak into some PDF viewers)
 ## Changes in 2.5

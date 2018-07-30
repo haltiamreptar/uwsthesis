@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \ProvidesClass{uwsthesis}[2017/07/30
-                                v2.5a
+                                v2.5b
                       A class for typesetting UWS/WSU  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
@@ -115,7 +115,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 \DeclareOption{realdoublespace}{\DeclareRobustCommand{\wsu@spacing}{\doublespacing}}
 \DeclareOption{nodoublespace}{\DeclareRobustCommand{\wsu@spacing}{\singlespacing}}
 
-
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 %% The defaults
 \ExecuteOptions{lof,lot,soo,phd,thesis,copy,doublespace,bib,wsu,logo}
 \ProcessOptions\relax
