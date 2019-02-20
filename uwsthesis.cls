@@ -81,6 +81,23 @@ I hereby declare that I have not submitted this material, either in full or in p
 \end{minipage}
 \end{center}
 \vspace*{\fill}}\clearpage}}
+
+\DeclareOption{revsoo}{\DeclareRobustCommand{\origionality}{
+{\clearpage\thispagestyle{empty}\vspace*{\fill}
+\begin{center}
+\begin{minipage}{0.6\textwidth}
+%\chapter*{Statement of Authentication}
+The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
+
+~
+
+I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
+
+\vspace*{1.5cm}\dotfill\par
+\@author\hspace*{\fill}\ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
+\end{minipage}
+\end{center}
+\vspace*{\fill}}\clearpage}}
 \DeclareOption{nosoo}{\DeclareRobustCommand{\origionality}{}}
 
 
