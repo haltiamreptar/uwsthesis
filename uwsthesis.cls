@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{uwsthesis}[2017/07/30
-                                v2.5b
+\ProvidesClass{uwsthesis}[2018/02/20
+                                v2.6
                       A class for typesetting UWS/WSU  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
@@ -12,7 +12,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{multicol,multirow} 
 \RequirePackage{morewrites}
-\LoadClass[a4paper,oneside,openany]{book}
+\LoadClass[a4paper,oneside]{book}
 %\RequirePackage[truedimen,showframe,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 \RequirePackage[truedimen,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 \RequirePackage[nottoc]{tocbibind}
@@ -59,7 +59,8 @@
 
 %% Copyright Statement
 \DeclareRobustCommand{\@copy}{\null}
-\DeclareOption{copy}{\renewcommand{\@copy}{\centering\copyright\ \@author \ --\  \number\year\null}}
+%%% Date change
+\DeclareOption{copy}{\renewcommand{\@copy}{\centering\copyright\ \@author \ --\  \number\year\ifdefined\yearrev--\number\yearrev \fi\null}}
 \DeclareOption{nocopy}{\renewcommand{\@copy}{\null}}
 
 
@@ -157,14 +158,24 @@ I hereby declare that I have not submitted this material, either in full or in p
       \strut \@author \par
     \vskip 5\p@
     \hrule height 4pt
-    \vskip 120\p@
+    \vskip 120\p@ plus 20\p@ minus 40\p@
 \centering
       A \@coc\ submitted for the degree of \par
      \@deg\par
       at\par
       \@institution\par
       \vskip 15\p@
+      %\Large
+      %%% Date Change
+      Submitted
+      \LARGE
       \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\year\par
+      \ifdefined\yearrev
+      %\Large
+      Revised
+      %\LARGE
+       \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\yearrev\par
+       \fi
     \end{flushright}
 \ifdefined\@super
     \vskip 20\p@
@@ -225,6 +236,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 
 %% Submission Date
 \DeclareRobustCommand{\subdate}[3]{\renewcommand{\year}{#3}\renewcommand{\month}{#2}\renewcommand{\day}{#1}}
+\DeclareRobustCommand{\revdate}[3]{\def\yearrev{#3}\def\monthrev{#2}\def\dayrev{#1}}
 
 %% Abstract
 \DeclareRobustCommand{\abst}{\chapter{Abstract}\theabst}
