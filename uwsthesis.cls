@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{uwsthesis}[2018/02/20
-                                v2.6
+\ProvidesClass{uwsthesis}[2017/07/30
+                                v2.5b
                       A class for typesetting UWS/WSU  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
@@ -12,7 +12,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{multicol,multirow} 
 \RequirePackage{morewrites}
-\LoadClass[a4paper,oneside]{book}
+\LoadClass[a4paper,oneside,openany,12pt]{book} 
 %\RequirePackage[truedimen,showframe,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 \RequirePackage[truedimen,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 \RequirePackage[nottoc]{tocbibind}
@@ -27,7 +27,7 @@
 
 \RequirePackage[sectionbib]{natbib}
 \RequirePackage{multibib}
-%\RequirePackage[breaklinks=true]{hyperref}
+\RequirePackage[breaklinks=true]{hyperref}
 \newcites{BIB}{Bibliography}
 \RequirePackage{listings}
 \RequirePackage{rotating}
@@ -54,13 +54,12 @@
 
 %% Document Types
 \DeclareRobustCommand{\@coc}{}
-\DeclareOption{coc}{\renewcommand{\@coc}{Confirmation of Candidature\\}}
-\DeclareOption{thesis}{\renewcommand{\@coc}{thesis}}
+\DeclareOption{coc}{\renewcommand{\@coc}{Confirmation of Candidature}}
+\DeclareOption{thesis}{\renewcommand{\@coc}{Thesis}}
 
 %% Copyright Statement
 \DeclareRobustCommand{\@copy}{\null}
-%%% Date change
-\DeclareOption{copy}{\renewcommand{\@copy}{\centering\copyright\ \@author \ --\  \number\year\ifdefined\yearrev--\number\yearrev \fi\null}}
+\DeclareOption{copy}{\renewcommand{\@copy}{\centering\copyright\ \@author \ --\  \number\year\null}}
 \DeclareOption{nocopy}{\renewcommand{\@copy}{\null}}
 
 
@@ -70,6 +69,7 @@
 \begin{center}
 \begin{minipage}{0.6\textwidth}
 %\chapter*{Statement of Authentication}
+\raggedright
 The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
 
 ~
@@ -78,23 +78,6 @@ I hereby declare that I have not submitted this material, either in full or in p
 
 \vspace*{1.5cm}\dotfill\par
 \@author\hspace*{\fill}\@date
-\end{minipage}
-\end{center}
-\vspace*{\fill}}\clearpage}}
-
-\DeclareOption{revsoo}{\DeclareRobustCommand{\origionality}{
-{\clearpage\thispagestyle{empty}\vspace*{\fill}
-\begin{center}
-\begin{minipage}{0.6\textwidth}
-%\chapter*{Statement of Authentication}
-The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
-
-~
-
-I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
-
-\vspace*{1.5cm}\dotfill\par
-\@author\hspace*{\fill}\ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
 \end{minipage}
 \end{center}
 \vspace*{\fill}}\clearpage}}
@@ -175,24 +158,14 @@ I hereby declare that I have not submitted this material, either in full or in p
       \strut \@author \par
     \vskip 5\p@
     \hrule height 4pt
-    \vskip 120\p@ plus 20\p@ minus 40\p@
+    \vskip 120\p@
 \centering
       A \@coc\ submitted for the degree of \par
      \@deg\par
       at\par
       \@institution\par
       \vskip 15\p@
-      %\Large
-      %%% Date Change
-      Submitted
-      \LARGE
       \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\year\par
-      \ifdefined\yearrev
-      %\Large
-      Revised
-      %\LARGE
-       \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\yearrev\par
-       \fi
     \end{flushright}
 \ifdefined\@super
     \vskip 20\p@
@@ -253,7 +226,6 @@ I hereby declare that I have not submitted this material, either in full or in p
 
 %% Submission Date
 \DeclareRobustCommand{\subdate}[3]{\renewcommand{\year}{#3}\renewcommand{\month}{#2}\renewcommand{\day}{#1}}
-\DeclareRobustCommand{\revdate}[3]{\def\yearrev{#3}\def\monthrev{#2}\def\dayrev{#1}}
 
 %% Abstract
 \DeclareRobustCommand{\abst}{\chapter{Abstract}\theabst}
