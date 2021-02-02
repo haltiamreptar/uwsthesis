@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{uwsthesis}[2018/02/20
-                                v2.6
-                      A class for typesetting UWS/WSU  Theses
+\ProvidesClass{uwsthesis}[2021/02/03
+                                v2.7
+                      A class for typesetting WSU/UWS  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
 
@@ -10,7 +10,7 @@
 
 
 \RequirePackage{graphicx}
-\RequirePackage{multicol,multirow} 
+\RequirePackage{multicol,multirow}
 \RequirePackage{morewrites}
 \LoadClass[a4paper,oneside]{book}
 %\RequirePackage[truedimen,showframe,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
@@ -94,14 +94,19 @@ The work presented in this \@coc\ is, to the best of my knowledge and belief, or
 I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
 
 \vspace*{1.5cm}\dotfill\par
-\@author\hspace*{\fill}\ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
+\@author\hspace*{\fill}
+\ifdefined\yearrev
+\ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
+\else
+\@date\par
+\fi
 \end{minipage}
 \end{center}
 \vspace*{\fill}}\clearpage}}
 \DeclareOption{nosoo}{\DeclareRobustCommand{\origionality}{}}
 
 
-%% Logo 
+%% Logo
 \DeclareOption{nologo}{\DeclareRobustCommand{\title@logo}{}}
 \DeclareOption{logo}{\DeclareRobustCommand{\title@logo}{\centering{\includegraphics[width=0.33\textwidth]{WSU-logo-colour}}}}
 
@@ -169,7 +174,7 @@ I hereby declare that I have not submitted this material, either in full or in p
     \hrule height 4pt
     \vskip 10\p@
     \begin{flushright}
-      \Huge 
+      \Huge
       \strut \@title \par
       \vskip 15\p@\LARGE
       \strut \@author \par
@@ -199,7 +204,7 @@ I hereby declare that I have not submitted this material, either in full or in p
     \centering
    \Large
     Supervisors:\\
-    \large    
+    \large
       \begingroup\edef\x{\endgroup\noexpand\forcsvlist\noexpand\@supline{\@super}}\x
 \fi
    \vspace*{\fill}\normalsize\@copy
@@ -249,7 +254,7 @@ I hereby declare that I have not submitted this material, either in full or in p
   \not@math@alphabet\bfseries\mathbf
   \fontseries\bfdefault\selectfont
   \boldmath
-}  
+}
 
 %% Submission Date
 \DeclareRobustCommand{\subdate}[3]{\renewcommand{\year}{#3}\renewcommand{\month}{#2}\renewcommand{\day}{#1}}
@@ -266,7 +271,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 %% Dedication
 \DeclareRobustCommand{\dedication}[1]{\DeclareRobustCommand{\@ded}{#1}}
 
-%% Publications 
+%% Publications
 \DeclareRobustCommand{\pubs}[1]{\DeclareRobustCommand{\@pubs}{#1}}
 
 %% Foreword
@@ -391,7 +396,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 \def\aplett{\ref@jnl{Astrophys.~Lett.}} % Astrophysics Letters
 \def\apspr{\ref@jnl{Astrophys.~Space~Phys.~Res.}}
                 % Astrophysics Space Physics Research
-\def\bain{\ref@jnl{Bull.~Astron.~Inst.~Netherlands}} 
+\def\bain{\ref@jnl{Bull.~Astron.~Inst.~Netherlands}}
                 % Bulletin Astronomical Institute of the Netherlands
 \def\fcp{\ref@jnl{Fund.~Cosmic~Phys.}}  % Fundamental Cosmic Physics
 \def\gca{\ref@jnl{Geochim.~Cosmochim.~Acta}}   % Geochimica Cosmochimica Acta
