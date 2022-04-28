@@ -65,6 +65,8 @@
 
 
 %% Originality Statement
+%%% \signature stores signature scan that is added to file
+\DeclareRobustCommand{\signature}[1]{\newcommand{\soo@signature}{#1}}
 \DeclareOption{soo}{\DeclareRobustCommand{\origionality}{
 {\clearpage\thispagestyle{empty}\vspace*{\fill}
 \begin{center}
@@ -76,7 +78,13 @@ The work presented in this \@coc\ is, to the best of my knowledge and belief, or
 
 I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
 
-\vspace*{1.5cm}\dotfill\par
+\ifdefined\soo@signature %
+%\fbox
+{\parbox[t][1.5cm][c]{\textwidth}{\centering\includegraphics[height=2.5cm]{\soo@signature}}}
+\else%
+\vspace*{1.5cm}%
+\fi%
+\par\vspace*{-3mm}\dotfill\par
 \@author\hspace*{\fill}\@date
 \end{minipage}
 \end{center}
@@ -93,7 +101,13 @@ The work presented in this \@coc\ is, to the best of my knowledge and belief, or
 
 I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
 
-\vspace*{1.5cm}\dotfill\par
+\ifdefined\soo@signature %
+%\fbox
+{\parbox[t][1.5cm][c]{\textwidth}{\centering\includegraphics[height=2.5cm]{\soo@signature}}}
+\else%
+\vspace*{1.5cm}%
+\fi%
+\par\vspace*{-3mm}\dotfill\par
 \@author\hspace*{\fill}
 \ifdefined\yearrev
 \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
