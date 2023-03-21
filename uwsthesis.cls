@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{uwsthesis}[2021/02/03
-                                v2.7
+\ProvidesClass{uwsthesis}[2023/03/21
+                                v2.8
                       A class for typesetting WSU/UWS  Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
@@ -219,7 +219,7 @@ I hereby declare that I have not submitted this material, either in full or in p
    \Large
     Supervisors:\\
     \large
-      \begingroup\edef\x{\endgroup\noexpand\forcsvlist\noexpand\@supline{\@super}}\x
+      \@super
 \fi
    \vspace*{\fill}\normalsize\@copy
   \end{titlepage}%
