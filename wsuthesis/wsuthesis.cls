@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{uwsthesis}[2021/10/14
-                                v3.0
-                      A class for typesetting WSU/UWS  Theses
+\ProvidesClass{wsuthesis}[2023/09/27
+                                v0.1
+                      A class for typesetting WSU Theses
                      Evan Crawford (e.crawford@westernsydney.edu.au)]
 
 
