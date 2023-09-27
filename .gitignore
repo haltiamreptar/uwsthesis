@@ -237,3 +237,6 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+## Github stuff
+.github/*
