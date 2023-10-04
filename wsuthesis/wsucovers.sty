@@ -1,0 +1,88 @@
+\ProvidesPackage{wsucovers}[2024-10-04]
+\RequirePackage{l3keys2e}
+\RequirePackage{wsucolours}
+\RequirePackage{tikz}
+\RequirePackage{tikzpagenodes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\RequirePackage{geometry}
+%\RequirePackage{hyperref}
+%% Package setup
+\ExplSyntaxOn
+\keys_define:nn{wsucovers}{
+  cover .choice:,
+  cover / blank        .code:n = \AtBeginDocument{\@WSUcover{}{}},
+  cover / title        .code:n = \AtBeginDocument{\@WSUcover{\@title}{}},
+  cover / title-author .code:n = \AtBeginDocument{\@WSUcover{\@title}{\@author}},
+  cover / none         .code:n = \relax,
+  back                 .code:n = \AtEndDocument{\@WSUbackcover},
+}
+\ProcessKeysOptions{wsucovers}\relax
+\ExplSyntaxOff
+
+
+%%  The front cover first argument is bigger than second
+\DeclareRobustCommand{\@WSUcover}[2]{\newgeometry{top=20truemm,bottom=20truemm,inner=16truemm,outer=16truemm,includemp=false,nohead}
+\pagestyle{empty}
+\noindent\begin{tikzpicture}[remember picture,overlay]
+\node (logo) at (current page text area.north)[anchor=north,align=center]{\includegraphics[width=56.666667mm]{WSU-logo-colour}};
+\node (shield) at  (current page text area.center){\includegraphics[height=126.5mm]{WSU-shield-colour}};
+\node (title) at (shield.south)[text width=113.333334mm,align=center,text height=20mm]{\sffamily\Huge #1};
+\node (subtitle) at (title.south)[text width=113.333334mm,align=center,text height=30mm]{\sffamily\Large #2};
+\draw[line width=1pt,color=WSUTEAL,step=1cm] (current page text area.south west) grid (current page text area.north east);%++(\paperwidth,\paperheight);
+\end{tikzpicture}
+\clearpage\restoregeometry
+}
+
+
+
+%%  These are for the changelog and Corporate Copyright, not needed for thesis! 
+%%  Will  split it out into a separately maintained package at some point!
+\DeclareRobustCommand{\@WSUgitchangelog}{
+\immediate\write18{git log -10 --pretty=format:"\@percentchar ad& \@percentchar aN & \@percentchar s \@backslashchar\@backslashchar\@backslashchar\@backslashchar\@backslashchar\@backslashchar hline"  --date=format-local:"\@percentchar Y/\@percentchar m/\@percentchar d" \currfilename > \jobname.stamp}
+{\color{WSUCRIMSON}
+\arrayrulecolor{WSUCRIMSON}
+\noindent\begin{tabular}{lll}
+\toprule
+\multicolumn{3}{l}{\large\textsf{\bfseries Changelog}}\\
+\hline
+\textsf{\textbf{DATE}} &\textsf{\textbf{AUTHOR}} & \textsf{\textbf{DESCRIPTION}} \\
+\hline
+\input{\jobname.stamp}
+\end{tabular}
+\vfill
+}
+}
+
+\DeclareRobustCommand{\@WSUcopyright}{
+\noindent{{\sloppy\hyphenpenalty=1000\small\sffamily Copyright \copyright{} Western Sydney University ABN 53 014 069 881 CRICOS Provider No: 00917K\par
+\noindent No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, or by any information storage and retrieval system, without the prior written permission.  Copyright for acknowledged materials reproduced herein is retained by the copyright holder. \par}}
+}
+
+
+
+
+%%  Setup for back cover
+\newcommand*{\@cleartoleftpage}{%
+  \clearpage
+    \if@twoside
+    \ifodd\c@page
+      \hbox{}\newpage
+      \if@twocolumn
+        \hbox{}\newpage
+      \fi
+    \fi
+  \fi
+}
+
+\DeclareRobustCommand{\@WSUbackcover}{
+{\@cleartoleftpage\newgeometry{top=20truemm,bottom=20truemm,inner=16truemm,outer=16truemm,includemp=false,nohead}
+\pagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\node (title) at (current page text area.north)[text width=56.666667mm,align=center,font=\small]{\textsf{Western Sydney University\\Locked Bag 1797\\Penrith NSW 2751 Australia}};
+\node (URL) at (current page text area.south)[text width=56.666667mm,align=center]{\href{https://www.westernsydney.edu.au}{\textsf{\textbf{WESTERNSYDNEY.EDU.AU}}}};
+\node (logo) at (URL.north)[anchor=south]{\includegraphics[width=20mm]{WSU-shield-colour}};
+\end{tikzpicture}
+}}
+
+

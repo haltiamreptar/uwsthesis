@@ -17,7 +17,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{l3keys2e}
-\RequirePackgage{wsucolours}
+\RequirePackage{wsucolours}
+
 
 %% Setup the degree name
 %%  
@@ -40,12 +41,12 @@
 \ProcessKeysOptions{degreename}\relax
 \ExplSyntaxOff
 
-\typeout{Herp Derp `\@deg'}
+\typeout{Degree name set to `\@deg'}
 \let\degree=\@deg
 
 %%% Do optional Covers, plain WSU logo or the title/author
-%% Load WSU-covers with option to do that.
-
+%% Load wsucovers with option to do that.
+\RequirePackage{wsucovers}
 %% Think about automating the front matter, including the LOF/LOT/LOL/LOTH
 
 
