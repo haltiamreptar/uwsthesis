@@ -17,11 +17,15 @@
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{l3keys2e}
+\RequirePackgage{wsucolours}
 
 %% Setup the degree name
 %%  
 \ExplSyntaxOn
 \str_new:N\@deg
+%%The default  is PhD!
+\str_set:Nn\@deg{Doctor~of~Philosophy}
+%% The keys below will override it.
 \keys_define:nn{degreename}{
   degree .choice:,
   degree / mphil   .code:n = \str_set:Nn\@deg{Master~of~Philosophy},
@@ -29,9 +33,11 @@
   degree / mschons .code:n = \str_set:Nn\@deg{Master~of~Science~(Honours)},
   degree / msc     .code:n = \str_set:Nn\@deg{Master\c_space_tl of\c_space_tl Science},
   degree / phd     .code:n = \str_set:Nn\@deg{Doctor~of~Philosophy},
+  %% Declare others here use the format:
+  % degree / NAME  .code:n = \str_set:Nn\@deg{NAME~OF~DEGREE}
+  % The spaces in the name must be either ~ or \c_space_tl
 }
 \ProcessKeysOptions{degreename}\relax
-\str_if_empty:NT\@deg{\str_set:Nn\@deg{Doctor~of~Philosophy}} 
 \ExplSyntaxOff
 
 \typeout{Herp Derp `\@deg'}
