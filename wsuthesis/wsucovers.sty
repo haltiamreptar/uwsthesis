@@ -15,7 +15,7 @@
   cover / title        .code:n = \AtBeginDocument{\@WSUcover{\@title}{}},
   cover / title-author .code:n = \AtBeginDocument{\@WSUcover{\@title}{\@author}},
   cover / none         .code:n = \relax,
-  back                 .code:n = \AtEndDocument{\@WSUbackcover},
+  back-cover           .code:n = \AtEndDocument{\@WSUbackcover},
 }
 \ProcessKeysOptions{wsucovers}\relax
 \ExplSyntaxOff
