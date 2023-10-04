@@ -239,3 +239,4 @@ TSWLatexianTemp*
 *.sta
 
 tmp/*
+.DS_Store
