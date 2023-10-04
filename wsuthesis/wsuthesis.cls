@@ -1,4 +1,4 @@
-\NeedsTeXFormat{LaTeX2e}[2022-06-01]
+\NeedsTeXFormat{LaTeX2e}%[2022-06-01]
 
 \ProvidesClass{wsuthesis}[2023/09/27
                                 v0.1
@@ -19,19 +19,28 @@
 \RequirePackage{l3keys2e}
 
 %% Setup the degree name
-%%  Default is determined by initial
+%%  
 \ExplSyntaxOn
+\str_new:N\@deg
 \keys_define:nn{degreename}{
-  degree .initial:n = phd,
-  degree .code:n = {\PassOptionsToPackage{#1}{wsuthesis-degreename}\typeout{Setting degree to  `#1`}},
-  degree .value_required:n = true,
-
+  degree .choice:,
+  degree / mphil   .code:n = \str_set:Nn\@deg{Master~of~Philosophy},
+  degree / mres    .code:n = \str_set:Nn\@deg{Master~of~Research},
+  degree / mschons .code:n = \str_set:Nn\@deg{Master~of~Science~(Honours)},
+  degree / msc     .code:n = \str_set:Nn\@deg{Master\c_space_tl of\c_space_tl Science},
+  degree / phd     .code:n = \str_set:Nn\@deg{Doctor~of~Philosophy},
 }
+\ProcessKeysOptions{degreename}\relax
+\str_if_empty:NT\@deg{\str_set:Nn\@deg{Doctor~of~Philosophy}} 
 \ExplSyntaxOff
-\ProcessKeysOptions{degreename}
-\RequirePackage{wsuthesis-degreename}
 
+\typeout{Herp Derp `\@deg'}
+\let\degree=\@deg
 
+%%% Do optional Covers, plain WSU logo or the title/author
+%% Load WSU-covers with option to do that.
+
+%% Think about automating the front matter, including the LOF/LOT/LOL/LOTH
 
 
 
