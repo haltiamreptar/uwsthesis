@@ -1,0 +1,58 @@
+\ProvidesPackage{wsuthesis-title-default}[2023-10-05]
+\RequirePackage{calc}
+%% This defines  the standard cover page for a WSU thesis
+%% provides the \titlepage command
+
+\DeclareRobustCommand{\title@logo}{\centering{\includegraphics[width=0.33\textwidth]{WSU-logo-colour}}}
+\DeclareRobustCommand{\@institution}{Western Sydney University}
+\renewcommand{\maketitle}{%\onehalfspacing
+\begin{titlepage}%
+        \title@logo\par
+            \let\footnotesize\small
+            \let\footnoterule\relax
+            \parindent \z@
+            \reset@font
+            \null\vskip 60pt
+            \hrule height 4pt
+            \vskip 10\p@
+            \begin{flushright}
+              \Huge
+              \strut \@title \par
+              \vskip 15\p@\LARGE
+              \strut \@author \par
+            \vskip 5\p@
+            \hrule height 4pt
+            \vskip 120\p@ plus 20\p@ minus 40\p@
+        \centering
+        \settowidth{\dimen0}{\@coc}
+            A \@coc{} \ifdim\dimen0>6em \par \fi
+              submitted for the degree of \par
+             \@deg\par
+              at\par
+              \@institution\par
+              \vskip 15\p@
+              %\Large
+              %%% Date Change
+              Submitted
+              \LARGE
+              \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\year\par
+              \ifdefined\yearrev
+              %\Large
+              Revised
+              %\LARGE
+               \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\yearrev\par
+               \fi
+            \end{flushright}
+        \ifdefined\@super
+            \vskip 20\p@
+            \centering
+           \Large
+            Supervisors:\\
+            \large
+              \begingroup\edef\x{\endgroup\noexpand\forcsvlist\noexpand\@supline{\@super}}\x
+        \fi
+           \vspace*{\fill}\ifdefined\@copy\normalsize\@copy\fi
+          \end{titlepage}%
+          %\setcounter{footnote}{0}\wsu@spacing%
+        }
+        

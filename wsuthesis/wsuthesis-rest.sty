@@ -6,7 +6,7 @@
 %\RequirePackage[truedimen,showframe,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 
 \RequirePackage[nottoc]{tocbibind}
-\RequirePackage{setspace}
+
 %\RequirePackage[printonlyused,withpage]{acronym}
 \RequirePackage[printonlyused]{acronym}
 %\RequirePackage{acronym}
@@ -44,46 +44,46 @@
 \DeclareOption{nocopy}{\renewcommand{\@copy}{\null}}
 
 
-%% Originality Statement
-\DeclareOption{soo}{\DeclareRobustCommand{\origionality}{
-{\clearpage\thispagestyle{empty}\vspace*{\fill}
-\begin{center}
-\begin{minipage}{0.6\textwidth}
-%\chapter*{Statement of Authentication}
-The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
+% %% Originality Statement
+% \DeclareOption{soo}{\DeclareRobustCommand{\origionality}{
+% {\clearpage\thispagestyle{empty}\vspace*{\fill}
+% \begin{center}
+% \begin{minipage}{0.6\textwidth}
+% %\chapter*{Statement of Authentication}
+% The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
 
-~
+% ~
 
-I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
+% I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
 
-\vspace*{1.5cm}\dotfill\par
-\@author\hspace*{\fill}\@date
-\end{minipage}
-\end{center}
-\vspace*{\fill}}\clearpage}}
+% \vspace*{1.5cm}\dotfill\par
+% \@author\hspace*{\fill}\@date
+% \end{minipage}
+% \end{center}
+% \vspace*{\fill}}\clearpage}}
 
-\DeclareOption{revsoo}{\DeclareRobustCommand{\origionality}{
-{\clearpage\thispagestyle{empty}\vspace*{\fill}
-\begin{center}
-\begin{minipage}{0.6\textwidth}
-%\chapter*{Statement of Authentication}
-The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
+% \DeclareOption{revsoo}{\DeclareRobustCommand{\origionality}{
+% {\clearpage\thispagestyle{empty}\vspace*{\fill}
+% \begin{center}
+% \begin{minipage}{0.6\textwidth}
+% %\chapter*{Statement of Authentication}
+% The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
 
-~
+% ~
 
-I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
+% I hereby declare that I have not submitted this material, either in full or in part, for a degree at this or any other institution.
 
-\vspace*{1.5cm}\dotfill\par
-\@author\hspace*{\fill}
-\ifdefined\yearrev
-\ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
-\else
-\@date\par
-\fi
-\end{minipage}
-\end{center}
-\vspace*{\fill}}\clearpage}}
-\DeclareOption{nosoo}{\DeclareRobustCommand{\origionality}{}}
+% \vspace*{1.5cm}\dotfill\par
+% \@author\hspace*{\fill}
+% \ifdefined\yearrev
+% \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\  \dayrev,\ \number\yearrev\par
+% \else
+% \@date\par
+% \fi
+% \end{minipage}
+% \end{center}
+% \vspace*{\fill}}\clearpage}}
+% \DeclareOption{nosoo}{\DeclareRobustCommand{\origionality}{}}
 
 
 %% Logo
@@ -143,53 +143,6 @@ I hereby declare that I have not submitted this material, either in full or in p
 \DeclareRobustCommand{\supervisors}[1]{\DeclareRobustCommand{\@super}{#1}}
 \newcommand{\@supline}[1]{#1\par}
 \def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
-\renewcommand{\maketitle}{\onehalfspacing\begin{titlepage}%
-\title@logo\par
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \parindent \z@
-    \reset@font
-    \null\vskip 60pt
-    \hrule height 4pt
-    \vskip 10\p@
-    \begin{flushright}
-      \Huge
-      \strut \@title \par
-      \vskip 15\p@\LARGE
-      \strut \@author \par
-    \vskip 5\p@
-    \hrule height 4pt
-    \vskip 120\p@ plus 20\p@ minus 40\p@
-\centering
-      A \@coc\ submitted for the degree of \par
-     \@deg\par
-      at\par
-      \@institution\par
-      \vskip 15\p@
-      %\Large
-      %%% Date Change
-      Submitted
-      \LARGE
-      \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\year\par
-      \ifdefined\yearrev
-      %\Large
-      Revised
-      %\LARGE
-       \ifcase\monthrev\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\yearrev\par
-       \fi
-    \end{flushright}
-\ifdefined\@super
-    \vskip 20\p@
-    \centering
-   \Large
-    Supervisors:\\
-    \large
-      \begingroup\edef\x{\endgroup\noexpand\forcsvlist\noexpand\@supline{\@super}}\x
-\fi
-   \vspace*{\fill}\normalsize\@copy
-  \end{titlepage}%
-  \setcounter{footnote}{0}\wsu@spacing%
-}
 
 
 

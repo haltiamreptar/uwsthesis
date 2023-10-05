@@ -31,8 +31,8 @@
 \noindent\begin{tikzpicture}[remember picture,overlay]
 \node (logo) at (current page text area.north)[anchor=north,align=center]{\includegraphics[width=56.666667mm]{WSU-logo-colour}};
 \node (shield) at  (current page text area.center){\includegraphics[height=126.5mm]{WSU-shield-colour}};
-\node (title) at (shield.south)[text width=113.333334mm,align=center,text height=20mm]{\sffamily\Huge #1};
-\node (subtitle) at (title.south)[text width=113.333334mm,align=center,text height=30mm]{\sffamily\Large #2};
+\node (title) at (shield.south)[text width=113.333334mm,align=center,text height=30mm]{\rmfamily\Huge #1};
+\node (subtitle) at (title.south)[text width=113.333334mm,align=center,text height=30mm]{\sffamily\huge #2};
 %\draw[line width=1pt,color=WSUTEAL,step=1cm] (current page text area.south west) grid (current page text area.north east);%++(\paperwidth,\paperheight);
 \end{tikzpicture}
 \clearpage\restoregeometry
