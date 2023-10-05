@@ -49,6 +49,18 @@
 %%% Do optional Covers, plain WSU logo or the title/author
 %% Load wsucovers with option to do that.
 \RequirePackage{wsucovers}
+\ExplSyntaxOn
+\keys_define:nn{wsucovers}{
+  cover .choice:,
+  cover / blank        .code:n = \AtBeginDocument{\@WSUcover{}{}}\typeout{Setting~Cover~to~blank~WSU~style},
+  cover / title        .code:n = \AtBeginDocument{\@WSUcover{\@title}{}}\typeout{Setting~Cover~to~WSU~style~with~Title~on~first~line},
+  cover / title-author .code:n = \AtBeginDocument{\@WSUcover{\@title}{\@author}}\typeout{Setting~Cover~to~WSU~style~with~Title~on~first~line,~Author~on~second},
+  cover / none         .code:n = \relax\typeout{Not~adding~a~front~cover},
+  back-cover           .code:n = \AtEndDocument{\@WSUbackcover}\typeout{Adding~the~WSU~back~cover},
+}
+\ProcessKeysOptions{wsucovers}\relax
+\ExplSyntaxOff
+
 %% Think about automating the front matter, including the LOF/LOT/LOL/LOTH
 
 
