@@ -14,12 +14,13 @@
 \RequirePackage[truedimen,a4paper,nomarginpar,left=4truecm,right=2.5truecm,top=2.5truecm,bottom=2.5truecm,nohead]{geometry}
 
 %%  Some housekeeping things
+\RequirePackage{wsucolours}
 \RequirePackage{etoolbox}
 \RequirePackage{morewrites}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{l3keys2e}
-\RequirePackage{wsucolours}
+
 \RequirePackage{setspace}
 
 %% Setup the degree name
@@ -68,6 +69,7 @@
 
 \ProcessKeysOptions{@wsuopts}\relax
 \ExplSyntaxOff
+
 \typeout{Mongraph type set to`\@coc'}
 \typeout{Degree name set to `\@deg'}
 \let\degree=\@deg
@@ -93,6 +95,12 @@
 
 %% Guide requires a title page
 %% Lets do that with an option and a sub-package
+% Requirements
+% Title page
+% This page contains the thesis title, your full name, 
+% the name of the degree for which the thesis is submitted, 
+% the name of the university and the year of submission.
+% This page should not be numbered.
 \ExplSyntaxOn
 \bool_new:N \@_titlepage
 \bool_set_true:N \@_titlepage
@@ -108,6 +116,35 @@
 %% It is the first unnumbered page, so set that up too
 \AtBeginDocument{\pagenumbering{gobble}}
 \AtBeginDocument{\maketitle}
+
+
+%% TODO
+% Dedication page
+% The dedication honours those who inspired or encouraged the writing of the 
+% thesis. 
+% A maximum of one page is permitted. 
+% This page is not numbered and is optional.
+
+
+%%TODO
+% Acknowledgements page
+% This page is to express recognition of and appreciation for special
+% professional assistance provided by academic supervisors, 
+% other persons, agencies and institutions.
+% This page is not numbered and is optional.
+
+%% Statement of originality
+%% Done and compliant, follows wording of Guide except for COC where the
+%% COC name is used. Signature can be added as a file that is an option to 
+%% the class, or a placeholder can be put in.
+%%
+% Statement of Authentication page
+% This is a signed statement to the effect that the work has not been submitted 
+% for a higher degree at any other institution and an undertaking that the work 
+% is original and a result of the candidates own research endeavour.
+% This page is not numbered and is compulsory.
+% You must sign this page – even if you are submitting electronically. 
+% A scanned copy of your signature is acceptable.
 
 %% Statement of origionality
 \DeclareRobustCommand{\@WSUorigionality}{
@@ -141,7 +178,31 @@ I hereby declare that I have not submitted this material, either in full or in p
 \AtBeginDocument{\@WSUorigionality}
 %% Think about automating the front matter, including the LOF/LOT/LOL/LOTH
 
+%%TODO
+%% Dates need to be done -- on cover, in soo etc...
+%% 
 
+%%TODO
+% Declarations page
+% This page includes declarations to acknowledge any external support you have received during your candidature. This may include:
+% ≥ Professional editing services;
+% ≥ Australian Government funded scholarships;
+% ≥ Industry funded scholarships;
+% ≥ Contributions from donors; and,
+% ≥ Any declarations that are not suited to your personal acknowledgements page.
+% You should also use this section to declare any conflicts of interest.
+% This page is not numbered and is optional. ≥ 
+%% Table of contents page
+% ≥ The table of contents page is a guide to the contents of the thesis.
+% ≥ The first item listed should be the first item that appears after the table of contents.
+% ≥ Every heading and subheading within the text should be listed verbatim in the table of contents.
+% ≥ The headings on the table of contents page should be indented in a consistent style.
+% ≥ Page numbers should be aligned with the correct heading or with the last line of multi-line heading.
+% List of tables page
+% Tables (including those in appendices) should be
+% listed and numbered (Arabic numerals) in the order of appearance in the manuscript. Even if there is only one table it should be included in a list of tables.
+% List of figures and illustrations page
+% The list of figures and illustrations can be formatted similarly to the list of tables.
 
 %%  Set the spacing after the frontmatter!
 \AtBeginDocument{\wsu@spacing}
