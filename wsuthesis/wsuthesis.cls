@@ -23,6 +23,15 @@
 
 \RequirePackage{setspace}
 
+
+%%% Set up  the fonts -- thesse are the *free* versions of what is defined in 
+%%% the style guide.
+%\usepackage{tgschola}
+\usepackage{libertinus}
+\usepackage[defaultsans,scale=0.8]{opensans}
+%\usepackage{courier}
+
+
 %% Setup the degree name
 %%  
 \ExplSyntaxOn
@@ -150,8 +159,9 @@
 \DeclareRobustCommand{\@WSUorigionality}{
 {\clearpage\thispagestyle{empty}\vspace*{\fill}
 \begin{center}
-\begin{minipage}{0.6\textwidth}
+\begin{minipage}{0.55\textwidth}
 %\chapter*{Statement of Authentication}
+\begingroup\hyphenation{conformation of candidature}
 The work presented in this \@coc\ is, to the best of my knowledge and belief, original except as acknowledged in the text.
 
 ~
@@ -171,6 +181,7 @@ I hereby declare that I have not submitted this material, either in full or in p
 \else
 \@date\par
 \fi
+\endgroup
 \end{minipage}
 \end{center}
 \vspace*{\fill}}\clearpage}
