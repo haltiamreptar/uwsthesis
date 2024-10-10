@@ -7,7 +7,7 @@
 
 %% Some things are taken from https://www.westernsydney.edu.au/__data/assets/pdf_file/0006/1064364/GRS_HDR_Examination_Handbook_2019.pdf cf Appendix 1
 
-%% a test edit
+%% a test edit extra
 
 %% A thesis is a book so lets start there!
 \LoadClass[a4paper,oneside]{book}
