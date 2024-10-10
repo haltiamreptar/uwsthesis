@@ -1,0 +1,59 @@
+commit 7fd7caa4d2e5686cf0037a904019c632063d8206
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Thu Oct 12 09:30:04 2023 +1100
+
+    Update fonts and cover sizes
+
+commit 6f76a20348d1c0583f93385c53f8eba443b41f38
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Fri Oct 6 11:42:47 2023 +1100
+
+    Changes to colours and the titlepages
+
+commit f74d7ea61dd7499a6b8c7258badb9f26e3dd0819
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Thu Oct 5 15:35:09 2023 +1100
+
+    Various Changes
+
+commit f4ec6c6a181c9001002c7a42956fe0895fd584dc
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Thu Oct 5 11:09:03 2023 +1100
+
+    Move cover options to the main style file.
+
+commit e65852b9c6cafb0b3e2478eb78f9a61d566bd5f7
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Thu Oct 5 09:54:14 2023 +1100
+
+    Add some extra typeouts for debugging
+
+commit 90f5704f711a416296cf57a3a8a57535577b60ab
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Wed Oct 4 16:05:15 2023 +1100
+
+    fix file name typos and implement covers
+
+commit bcddb52c7d94f2a827950f28ad84cf22f62f9d8b
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Wed Oct 4 14:34:56 2023 +1100
+
+    Add a colours style file
+
+commit e9e945a5f41ca2502370b33ea471735a14a56652
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Wed Oct 4 13:52:58 2023 +1100
+
+    First setup of the new degrees
+
+commit 364836c00eaad11e322ad25e0b9dded79b37293c
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Fri Sep 29 14:06:48 2023 +1000
+
+    Revert  point for redesign of degree name
+
+commit 6f4c377f71e057f49954d6fc79308fa5754ced56
+Author: Evan Crawford <e.crawford@westernsydney.edu.au>
+Date:   Wed Sep 27 15:41:10 2023 +1000
+
+    Rename class to wsuthesis drop version back to 0.1
